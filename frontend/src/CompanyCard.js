@@ -15,7 +15,7 @@ class CompanyCard extends Component {
     //change link to go to company page
     return (
       <div>
-        <Link to="/">
+        <Link to={`/companies/${this.props.handle}`}>
           <Card>
             <CardBody>
               <CardTitle>{this.props.name}</CardTitle>

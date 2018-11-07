@@ -33,13 +33,30 @@ class JoblyApi {
   }
 
   static async getCompany(handle) {
-    let res = await this.request(`companies/${handle}`);
-    return res.company;
+    try {
+      let res = await this.request(`companies/${handle}`);
+      return res.company;
+    } catch (err) {
+      throw err;
+    }
   }
 
   static async getCompanies(queryObj) {
-    let res = await this.request(`companies/`, queryObj);
-    return res.companies;
+    try {
+      let res = await this.request(`companies/`, queryObj);
+      return res.companies;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  static async getJobs(queryObj) {
+    try {
+      let res = await this.request(`jobs/`, queryObj);
+      return res.jobs;
+    } catch (err) {
+      throw err;
+    }
   }
 }
 

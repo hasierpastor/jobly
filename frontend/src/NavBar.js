@@ -14,7 +14,9 @@ class NavBar extends Component {
     // }
     return (
       <nav>
-        <NavLink to="/">Jobly</NavLink>
+        <NavLink exact to="/">
+          Jobly
+        </NavLink>
         <NavLink to="/companies">Companies</NavLink>
         <NavLink to="/jobs">Jobs</NavLink>
         <NavLink to="/profile">Profile</NavLink>

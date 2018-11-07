@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Routes from './Routes';
-import JoblyApi from './ApiHelper';
+import JoblyApi from './JoblyApi';
 import CompanyCard from './CompanyCard';
 
 class CompanyList extends Component {
@@ -15,15 +15,30 @@ class CompanyList extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  //after CompanyList mounts, gets companies from backend and adds to state
   async componentDidMount() {
-    let companies = await JoblyApi.getCompanies();
-    this.setState({ companies: companies, isLoading: false });
+    try {
+      let companies = await JoblyApi.getCompanies();
+      this.setState({ companies: companies, isLoading: false });
+    } catch (err) {
+      console.log(err);
+      this.setState({ companies: null, isLoading: false });
+    }
   }
 
+  //when search form is submitted, makes request to backend with searchterm
+  //{search: searchtermFromForm} --> defaults to {} if no search term
   async handleSubmit(evt) {
-    evt.preventDefault();
-    let companies = await JoblyApi.getCompanies({ search: this.state.search });
-    this.setState({ companies: companies, isLoading: false });
+    try {
+      evt.preventDefault();
+      let companies = await JoblyApi.getCompanies({
+        search: this.state.search
+      });
+      this.setState({ companies, isLoading: false });
+    } catch (err) {
+      console.log(err);
+      this.setState({ companies: null, isLoading: false });
+    }
   }
 
   handleChange(evt) {
@@ -35,9 +50,18 @@ class CompanyList extends Component {
       return <div>LOADING....</div>;
     }
 
+    if (!this.state.companies) {
+      return <div>Companies not found</div>;
+    }
+
     let cards = this.state.companies.map(company => {
       return (
-        <CompanyCard name={company.name} description={company.description} />
+        <CompanyCard
+          name={company.name}
+          description={company.description}
+          handle={company.handle}
+          key={company.handle}
+        />
       );
     });
 
