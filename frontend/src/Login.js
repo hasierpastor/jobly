@@ -21,6 +21,11 @@ class Login extends Component {
     this.handleRegister = this.handleRegister.bind(this);
   }
 
+  //makes login request using api helper function
+  //if login successful, calls makeCurrUser,
+  //which passes a token to App to get user data and set top level state
+  //successful --> redirects to /jobs
+  //unsuccessful --> sets state to display error
   async handleLogin(evt) {
     try {
       evt.preventDefault();
@@ -45,6 +50,11 @@ class Login extends Component {
     }
   }
 
+  //makes request to register using api helper function
+  //if register successful, calls makeCurrUser,
+  //which passes a token to App to get user data and set top level state
+  //successful --> redirects to /jobs
+  //unsuccessful --> sets state to display error
   async handleRegister(evt) {
     try {
       evt.preventDefault();
@@ -94,6 +104,7 @@ class Login extends Component {
 
   //is there any way to store baseForm as a variable?
   render() {
+    //if there is a currUser logged in, trying to go to /login redirects to homepage
     if (this.props.currUser) {
       return <Redirect to="/" />;
     }

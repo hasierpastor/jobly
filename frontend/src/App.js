@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Routes from './Routes';
 import NavBar from './NavBar';
@@ -49,8 +48,9 @@ class App extends Component {
     }
   }
 
+  //deletes token from local storage, sets currUSer to null, passes updated state (currUser: null) to logout
   async doLogout() {
-    localStorage.clear();
+    localStorage.setItem('userToken', '');
     this.setState({ currUser: null });
   }
 
@@ -71,6 +71,7 @@ class App extends Component {
         </div>
       );
     }
+    //pass currUser to routes if logged in
     return (
       <div className="App">
         <NavBar currUser={this.state.currUser} />

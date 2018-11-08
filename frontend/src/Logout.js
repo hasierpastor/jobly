@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Routes from './Routes';
 import { Redirect } from 'react-router-dom';
 
 class Logout extends Component {
@@ -8,6 +7,7 @@ class Logout extends Component {
     this.state = { isLoading: true };
   }
 
+  //call logout function in app, which sets currUser to null and passes to all routes
   componentDidMount() {
     this.props.doLogout();
     this.setState({ isLoading: false });
