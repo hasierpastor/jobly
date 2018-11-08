@@ -45,7 +45,7 @@ class Login extends Component {
       this.setState({
         username: '',
         password: '',
-        error: true
+        error: err
       });
     }
   }
@@ -67,25 +67,22 @@ class Login extends Component {
       });
       this.props.makeCurrUser(token);
       this.setState({
-        username: '',
-        password: '',
-        firstName: '',
-        lastName: '',
-        email: '',
         error: false
       });
       this.props.history.push('/jobs');
     } catch (err) {
       console.log(err);
       this.setState({
-        username: '',
-        password: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        error: true
+        error: err
       });
     }
+    this.setState({
+      username: '',
+      password: '',
+      firstName: '',
+      lastName: '',
+      email: ''
+    });
   }
 
   isLogin() {
@@ -102,8 +99,28 @@ class Login extends Component {
     });
   }
 
-  //is there any way to store baseForm as a variable?
   render() {
+    const baseFormHtml = (
+      <div>
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          value={this.state.username}
+          onChange={this.handleChange}
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          value={this.state.password}
+          onChange={this.handleChange}
+        />
+      </div>
+    );
+
     //if there is a currUser logged in, trying to go to /login redirects to homepage
     if (this.props.currUser) {
       return <Redirect to="/" />;
@@ -114,25 +131,10 @@ class Login extends Component {
           <button onClick={this.isLogin}>Login</button>
           <button onClick={this.isSignup}>SignUp</button>
           <form onSubmit={this.handleLogin}>
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              value={this.state.username}
-              onChange={this.handleChange}
-            />
-            <label htmlFor="password">Password</label>
-            <input
-              type="text"
-              name="password"
-              id="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
+            {baseFormHtml}
             <button>Submit</button>
           </form>
-          <div>{this.state.error ? `Invalid Credentials` : null}</div>
+          <div>{this.state.error ? `${this.state.error}` : null}</div>
         </div>
       );
     }
@@ -142,22 +144,7 @@ class Login extends Component {
         <button onClick={this.isLogin}>Login</button>
         <button onClick={this.isSignup}>SignUp</button>
         <form onSubmit={this.handleRegister}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            value={this.state.username}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="text"
-            name="password"
-            id="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
+          {baseFormHtml}
           <label htmlFor="firstName">First Name</label>
 
           <input
@@ -185,6 +172,7 @@ class Login extends Component {
           />
           <button>Submit</button>
         </form>
+        <div>{this.state.error ? `${this.state.error}` : null}</div>
       </div>
     );
   }

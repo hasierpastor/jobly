@@ -4,7 +4,7 @@ import Routes from './Routes';
 import NavBar from './NavBar';
 import { decode } from 'jsonwebtoken';
 import JoblyApi from './JoblyApi';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -51,38 +51,28 @@ class App extends Component {
   //deletes token from local storage, sets currUSer to null, passes updated state (currUser: null) to logout
   async doLogout() {
     localStorage.setItem('userToken', '');
-    this.setState({ currUser: null });
+    //app is able to access props.history because we are using withRouter
+    this.setState({ currUser: null }, props =>
+      this.props.history.push('/login')
+    ); //callback to use history.push lookup: withRouter
   }
 
   render() {
     if (this.state.isLoading) {
       return <div>Loading...</div>;
     }
-    //if no user is logged in, redirect to '/login'
-    if (!this.state.currUser) {
-      return (
-        <div className="App">
-          <NavBar currUser={this.state.currUser} />
-          <Routes
-            makeCurrUser={this.makeCurrUser}
-            currUser={this.state.currUser}
-          />
-          <Redirect to="/login" />
-        </div>
-      );
-    }
+
     //pass currUser to routes if logged in
     return (
       <div className="App">
-        <NavBar currUser={this.state.currUser} />
+        <NavBar doLogout={this.doLogout} currUser={this.state.currUser} />
         <Routes
           makeCurrUser={this.makeCurrUser}
           currUser={this.state.currUser}
-          doLogout={this.doLogout}
         />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

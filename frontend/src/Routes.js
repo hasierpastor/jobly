@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './Home';
+import PrivateRoute from './PrivateRoute';
 import CompanyList from './CompanyList';
 import CompanyPage from './CompanyPage';
 import JobList from './JobList';
@@ -17,23 +18,27 @@ class Routes extends Component {
           path="/"
           render={() => <Home currUser={this.props.currUser} />}
         />
-        <Route
+        <PrivateRoute
           exact
           path="/companies"
+          currUser={this.props.currUser}
           render={() => <CompanyList currUser={this.props.currUser} />}
         />
-        <Route
+        <PrivateRoute
           exact
           path="/jobs"
+          currUser={this.props.currUser}
           render={() => <JobList currUser={this.props.currUser} />}
         />
-        <Route
+        <PrivateRoute
           exact
           path="/profile"
+          currUser={this.props.currUser}
           render={() => <UserProfile currUser={this.props.currUser} />}
         />
-        <Route
+        <PrivateRoute
           path="/companies/:company"
+          currUser={this.props.currUser}
           render={props => (
             <CompanyPage {...props} currUser={this.props.currUser} />
           )}
@@ -49,17 +54,7 @@ class Routes extends Component {
             />
           )}
         />
-        <Route
-          exact
-          path="/logout"
-          render={props => (
-            <Logout
-              currUser={this.props.currUser}
-              doLogout={this.props.doLogout}
-              {...props}
-            />
-          )}
-        />
+        )} />
         <Redirect to="/" />
       </Switch>
     );

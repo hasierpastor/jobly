@@ -20,7 +20,7 @@ class NavBar extends Component {
         <NavLink to="/companies">Companies</NavLink>
         <NavLink to="/jobs">Jobs</NavLink>
         <NavLink to="/profile">Profile</NavLink>
-        <NavLink to="/logout">Log out</NavLink>
+        <button onClick={this.props.doLogout}>Log out</button>
       </nav>
     );
   }
