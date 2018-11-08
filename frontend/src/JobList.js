@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import JoblyApi from './JoblyApi';
-import Routes from './Routes';
 import JobCard from './JobCard';
 
 class JobList extends Component {
@@ -32,7 +31,7 @@ class JobList extends Component {
     try {
       evt.preventDefault();
       let jobs = await JoblyApi.getJobs({ search: this.state.search });
-      this.setState({ jobs, isLoading: false });
+      this.setState({ jobs, isLoading: false, search: '' });
     } catch (err) {
       console.log(err);
       this.setState({ jobs: null, isLoading: false });

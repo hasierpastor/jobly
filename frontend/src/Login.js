@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Routes from './Routes';
 
 class Login extends Component {
   render() {

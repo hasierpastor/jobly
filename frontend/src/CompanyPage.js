@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Routes from './Routes';
 import JobCard from './JobCard';
 import JoblyApi from './JoblyApi';
 
@@ -14,6 +13,7 @@ class CompanyPage extends Component {
       let company = await JoblyApi.getCompany(this.props.match.params.company);
       this.setState({ company, isLoading: false });
     } catch (err) {
+      console.log(err);
       this.setState({ company: null, isLoading: false });
     }
   }
@@ -26,8 +26,6 @@ class CompanyPage extends Component {
     if (!this.state.company) {
       return <div>Company not Found</div>;
     }
-
-    console.log(this.state);
 
     let jobs = this.state.company.jobs.map(job => (
       <JobCard

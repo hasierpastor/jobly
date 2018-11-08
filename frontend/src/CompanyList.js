@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Routes from './Routes';
 import JoblyApi from './JoblyApi';
 import CompanyCard from './CompanyCard';
 
@@ -34,7 +33,7 @@ class CompanyList extends Component {
       let companies = await JoblyApi.getCompanies({
         search: this.state.search
       });
-      this.setState({ companies, isLoading: false });
+      this.setState({ companies, isLoading: false, search: '' });
     } catch (err) {
       console.log(err);
       this.setState({ companies: null, isLoading: false });
