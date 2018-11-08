@@ -20,7 +20,11 @@ class Routes extends Component {
           path="/companies/:company"
           render={props => <CompanyPage {...props} />}
         />
-        <Route exact path="/login" render={() => <Login />} />
+        <Route
+          exact
+          path="/login"
+          render={() => <Login makeCurrUser={() => this.makeCurrUser()} />}
+        />
         <Route exact path="/logout" render={() => <Logout />} />
         <Redirect to="/" />
       </Switch>

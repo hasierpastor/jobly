@@ -58,6 +58,15 @@ class JoblyApi {
       throw err;
     }
   }
+
+  static async login(bodyObj) {
+    try {
+      let res = await this.request(`login/`, bodyObj, 'post');
+      return res.token;
+    } catch (err) {
+      throw err;
+    }
+  }
 }
 
 export default JoblyApi;

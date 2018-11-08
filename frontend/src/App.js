@@ -5,11 +5,24 @@ import Routes from './Routes';
 import NavBar from './NavBar';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currUser: null
+    };
+    this.makeCurrUser = this.makeCurrUser.bind(this);
+  }
+  //getting token successfully, next step decode token, store token in local storage and
+  //make request with username
+  makeCurrUser(token) {
+    console.log(token);
+  }
+
   render() {
     return (
       <div className="App">
         <NavBar />
-        <Routes />
+        <Routes makeCurrUser={() => this.makeCurrUser} />
       </div>
     );
   }
