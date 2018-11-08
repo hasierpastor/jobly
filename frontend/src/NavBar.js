@@ -4,14 +4,15 @@ import './NavBar.css';
 
 class NavBar extends Component {
   render() {
-    // if (!this.props.currUser) {
-    //   return (
-    //     <nav>
-    //       <NavLink to="/">Jobly</NavLink>
-    //       <NavLink to="/login">Log in</NavLink>
-    //     </nav>
-    //   );
-    // }
+    console.log(this.props);
+    if (!this.props.currUser) {
+      return (
+        <nav>
+          <NavLink to="/">Jobly</NavLink>
+          <NavLink to="/login">Log in</NavLink>
+        </nav>
+      );
+    }
     return (
       <nav>
         <NavLink exact to="/">

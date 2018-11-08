@@ -12,20 +12,54 @@ class Routes extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={() => <Home />} />
-        <Route exact path="/companies" render={() => <CompanyList />} />
-        <Route exact path="/jobs" render={() => <JobList />} />
-        <Route exact path="/profile" render={() => <UserProfile />} />
+        <Route
+          exact
+          path="/"
+          render={() => <Home currUser={this.props.currUser} />}
+        />
+        <Route
+          exact
+          path="/companies"
+          render={() => <CompanyList currUser={this.props.currUser} />}
+        />
+        <Route
+          exact
+          path="/jobs"
+          render={() => <JobList currUser={this.props.currUser} />}
+        />
+        <Route
+          exact
+          path="/profile"
+          render={() => <UserProfile currUser={this.props.currUser} />}
+        />
         <Route
           path="/companies/:company"
-          render={props => <CompanyPage {...props} />}
+          render={props => (
+            <CompanyPage {...props} currUser={this.props.currUser} />
+          )}
         />
         <Route
           exact
           path="/login"
-          render={() => <Login makeCurrUser={() => this.makeCurrUser()} />}
+          render={props => (
+            <Login
+              {...props}
+              makeCurrUser={this.props.makeCurrUser}
+              currUser={this.props.currUser}
+            />
+          )}
         />
-        <Route exact path="/logout" render={() => <Logout />} />
+        <Route
+          exact
+          path="/logout"
+          render={props => (
+            <Logout
+              currUser={this.props.currUser}
+              doLogout={this.props.doLogout}
+              {...props}
+            />
+          )}
+        />
         <Redirect to="/" />
       </Switch>
     );
