@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JoblyApi from './JoblyApi';
 import CompanyCard from './CompanyCard';
+import _ from 'lodash';
 
 class CompanyList extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class CompanyList extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    // this.filterSearch = this.filterSearch.bind(this);
   }
 
   //after CompanyList mounts, gets companies from backend and adds to state
@@ -29,22 +31,24 @@ class CompanyList extends Component {
   //{search: searchtermFromForm} --> defaults to {} if no search term
   async handleSubmit(evt) {
     try {
-      evt.preventDefault();
       let companies = await JoblyApi.getCompanies({
         search: this.state.search
       });
-      this.setState({ companies, isLoading: false, search: '' });
+      this.setState({ companies, isLoading: false });
     } catch (err) {
       console.log(err);
       this.setState({ companies: null, isLoading: false });
     }
   }
 
-  handleChange(evt) {
+  //handleChange now also calls lodash.debounce which dynamically filters companies
+  async handleChange(evt) {
     this.setState({ search: evt.target.value });
+    _.debounce(await this.handleSubmit, 1000)();
   }
 
   render() {
+    console.log('RENDERING');
     if (this.state.isLoading) {
       return <div>LOADING....</div>;
     }
@@ -66,7 +70,7 @@ class CompanyList extends Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <label htmlFor="search">Search</label>
           <input
             type="text"
@@ -75,7 +79,6 @@ class CompanyList extends Component {
             value={this.state.search}
             onChange={this.handleChange}
           />
-          <button>Submit</button>
         </form>
         {cards}
       </div>

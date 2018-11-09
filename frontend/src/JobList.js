@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JoblyApi from './JoblyApi';
 import JobCard from './JobCard';
+import _ from 'lodash';
 
 class JobList extends Component {
   constructor(props) {
@@ -29,17 +30,17 @@ class JobList extends Component {
   //{search: searchtermFromForm} --> defaults to {} if no search term
   async handleSubmit(evt) {
     try {
-      evt.preventDefault();
       let jobs = await JoblyApi.getJobs({ search: this.state.search });
-      this.setState({ jobs, isLoading: false, search: '' });
+      this.setState({ jobs, isLoading: false });
     } catch (err) {
       console.log(err);
       this.setState({ jobs: null, isLoading: false });
     }
   }
 
-  handleChange(evt) {
+  async handleChange(evt) {
     this.setState({ search: evt.target.value });
+    _.debounce(await this.handleSubmit, 1000)();
   }
 
   render() {
@@ -74,7 +75,7 @@ class JobList extends Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <label htmlFor="search">Search</label>
           <input
             type="text"
@@ -83,7 +84,6 @@ class JobList extends Component {
             value={this.state.search}
             onChange={this.handleChange}
           />
-          <button>Submit</button>
         </form>
         {cards}
       </div>
