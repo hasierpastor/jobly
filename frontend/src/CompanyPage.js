@@ -19,6 +19,11 @@ class CompanyPage extends Component {
   }
 
   render() {
+    //map through jobs that user has applied to and create a new set with the id of those jobs
+    const jobIdsAppliedTo = new Set(
+      this.props.currUser.jobs.map(job => job.id)
+    );
+
     if (this.state.isLoading) {
       return <div>LOADING....</div>;
     }
@@ -34,6 +39,11 @@ class CompanyPage extends Component {
         salary={job.salary}
         equity={job.equity}
         key={job.id}
+        hasApplied={jobIdsAppliedTo.has(job.id)}
+        id={job.id}
+        state={job.state}
+        currUser={this.props.currUser}
+        updateUser={this.props.updateUser}
       />
     ));
 

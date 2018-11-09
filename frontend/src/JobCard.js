@@ -5,20 +5,19 @@ import JoblyApi from './JoblyApi';
 class JobCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      message: 'Not Applied'
-    };
     this.handleClick = this.handleClick;
   }
 
   async handleClick(id) {
     await JoblyApi.applyJob(id);
+    console.log(this.props.currUser);
     let user = await JoblyApi.getUser(this.props.currUser.username);
+    console.log(this.props);
     await this.props.updateUser(user);
   }
 
   render() {
-    console.log(this.props.currUser);
+    //if hasApplied props is true display applied otherwise display apply
     return (
       <div>
         <Card>

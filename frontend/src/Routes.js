@@ -51,7 +51,11 @@ class Routes extends Component {
           path="/companies/:company"
           currUser={this.props.currUser}
           render={props => (
-            <CompanyPage {...props} currUser={this.props.currUser} />
+            <CompanyPage
+              {...props}
+              currUser={this.props.currUser}
+              updateUser={this.props.updateUser}
+            />
           )}
         />
         <Route

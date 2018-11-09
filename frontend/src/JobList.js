@@ -12,12 +12,10 @@ class JobList extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.toggleLoading = this.toggleLoading.bind(this);
   }
 
   //after JobList mounts, gets jobs from backend and adds to state
   async componentDidMount() {
-    debugger;
     try {
       let jobs = await JoblyApi.getJobs();
       this.setState({ jobs: jobs, isLoading: false });
@@ -44,15 +42,11 @@ class JobList extends Component {
     this.setState({ search: evt.target.value });
   }
 
-  toggleLoading() {
-    return this.state.isLoading ? false : true;
-  }
-
   render() {
+    //map through jobs that user has applied to and create a new set with the id of those jobs
     const jobIdsAppliedTo = new Set(
       this.props.currUser.jobs.map(job => job.id)
     );
-    debugger;
     if (this.state.isLoading) {
       return <div>LOADING....</div>;
     }
@@ -72,6 +66,7 @@ class JobList extends Component {
           currUser={this.props.currUser}
           updateUser={this.props.updateUser}
           state={job.state}
+          //pass down a true or false property depending if job.id is in set of job ids user has applied to
           hasApplied={jobIdsAppliedTo.has(job.id)}
         />
       );
