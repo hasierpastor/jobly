@@ -30,6 +30,7 @@ class CompanyList extends Component {
   //when search form is submitted, makes request to backend with searchterm
   //{search: searchtermFromForm} --> defaults to {} if no search term
   async handleSubmit(evt) {
+    console.log('handlesubmit ran!');
     try {
       let companies = await JoblyApi.getCompanies({
         search: this.state.search
@@ -43,8 +44,9 @@ class CompanyList extends Component {
 
   //handleChange now also calls lodash.debounce which dynamically filters companies
   async handleChange(evt) {
+    console.log('handlechange ran!');
     this.setState({ search: evt.target.value });
-    _.debounce(await this.handleSubmit, 1000)();
+    _.debounce(await this.handleSubmit, 2000)();
   }
 
   render() {

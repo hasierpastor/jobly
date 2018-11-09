@@ -1,0 +1,21 @@
+.formGroup {
+  margin: 15px;
+}
+
+.container {
+  justify-content: center;
+}
+
+.label {
+  width: 100px;
+}
+
+.input {
+  margin-left: 20px;
+}
+
+.loginButton,
+.signUpButton,
+.submitButton {
+  margin: 7px;
+}

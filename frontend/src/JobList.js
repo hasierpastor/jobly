@@ -39,8 +39,9 @@ class JobList extends Component {
   }
 
   async handleChange(evt) {
-    this.setState({ search: evt.target.value });
-    _.debounce(await this.handleSubmit, 1000)();
+    this.setState({ search: evt.target.value }, () =>
+      _.debounce(this.handleSubmit, 1000)()
+    );
   }
 
   render() {

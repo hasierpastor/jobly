@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import JoblyApi from './JoblyApi';
 import { Redirect } from 'react-router-dom';
+import './Login.css';
+import {
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormText,
+  Col,
+  ButtonGroup
+} from 'reactstrap';
 
 class Login extends Component {
   constructor(props) {
@@ -102,22 +113,36 @@ class Login extends Component {
   render() {
     const baseFormHtml = (
       <div>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          id="username"
-          value={this.state.username}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-        />
+        <FormGroup className="formGroup" row>
+          <Label className="label" htmlFor="username">
+            Username
+          </Label>
+          <Col sm={6}>
+            <Input
+              className="input"
+              type="text"
+              name="username"
+              id="username"
+              value={this.state.username}
+              onChange={this.handleChange}
+            />
+          </Col>
+        </FormGroup>
+        <FormGroup className="formGroup" row>
+          <Label className="label" htmlFor="password">
+            Password
+          </Label>
+          <Col sm={6}>
+            <Input
+              className="input"
+              type="password"
+              name="password"
+              id="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
+          </Col>
+        </FormGroup>
       </div>
     );
 
@@ -127,51 +152,105 @@ class Login extends Component {
     }
     if (!this.state.isSignup) {
       return (
-        <div>
-          <button onClick={this.isLogin}>Login</button>
-          <button onClick={this.isSignup}>SignUp</button>
-          <form onSubmit={this.handleLogin}>
+        <div className="container">
+          <ButtonGroup>
+            <Button
+              className="loginButton"
+              color="primary"
+              active
+              onClick={this.isLogin}
+            >
+              Login
+            </Button>
+            <Button
+              className="signUpButton"
+              color="primary"
+              onClick={this.isSignup}
+            >
+              SignUp
+            </Button>
+          </ButtonGroup>
+          <Form onSubmit={this.handleLogin}>
             {baseFormHtml}
-            <button>Submit</button>
-          </form>
+            <Button className="submitButton" color="success">
+              Submit
+            </Button>
+          </Form>
           <div>{this.state.error ? `${this.state.error}` : null}</div>
         </div>
       );
     }
 
     return (
-      <div>
-        <button onClick={this.isLogin}>Login</button>
-        <button onClick={this.isSignup}>SignUp</button>
-        <form onSubmit={this.handleRegister}>
+      <div className="container">
+        <ButtonGroup>
+          <Button
+            color="primary"
+            className="loginButton"
+            onClick={this.isLogin}
+          >
+            Login
+          </Button>
+          <Button
+            color="primary"
+            active
+            className="signUpButton"
+            onClick={this.isSignup}
+          >
+            SignUp
+          </Button>
+        </ButtonGroup>
+        <Form onSubmit={this.handleRegister}>
           {baseFormHtml}
-          <label htmlFor="firstName">First Name</label>
-
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            value={this.state.firstName}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            value={this.state.lastName}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-          <button>Submit</button>
-        </form>
+          <FormGroup className="formGroup" row>
+            <Label className="label" htmlFor="firstName">
+              First Name
+            </Label>
+            <Col sm={6}>
+              <Input
+                className="input"
+                type="text"
+                name="firstName"
+                id="firstName"
+                value={this.state.firstName}
+                onChange={this.handleChange}
+              />
+            </Col>
+          </FormGroup>
+          <FormGroup className="formGroup" row>
+            <Label className="label" htmlFor="lastName">
+              Last Name
+            </Label>
+            <Col sm={6}>
+              <Input
+                className="input"
+                type="text"
+                name="lastName"
+                id="lastName"
+                value={this.state.lastName}
+                onChange={this.handleChange}
+              />
+            </Col>
+          </FormGroup>
+          <FormGroup className="formGroup" row>
+            <Label className="label" htmlFor="email">
+              Email
+            </Label>
+            <Col sm={6}>
+              <Input
+                className="input"
+                type="text"
+                name="email"
+                id="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+            </Col>
+          </FormGroup>
+          <Button className="submitButton" color="success">
+            Submit
+          </Button>
+        </Form>
         <div>{this.state.error ? `${this.state.error}` : null}</div>
       </div>
     );
