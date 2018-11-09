@@ -1,14 +1,29 @@
-import React, { Component } from 'react';
-import Routes from './Routes';
+// import React, { Component } from 'react';
+// import { Redirect } from 'react-router-dom';
 
-class Logout extends Component {
-  render() {
-    return (
-      <div className="Logout">
-        <h1>Logout</h1>
-      </div>
-    );
-  }
-}
+// class Logout extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { isLoading: true };
+//   }
 
-export default Logout;
+//   //call logout function in app, which sets currUser to null and passes to all routes
+//   componentDidMount() {
+//     this.props.doLogout();
+//     this.setState({ isLoading: false });
+//   }
+
+//   render() {
+//     if (this.state.isLoading) {
+//       return (
+//         <div className="Logout">
+//           <h1>Loading...</h1>
+//         </div>
+//       );
+//     }
+//     //tried to do history.push, but logout didn't render anything (page blank)
+//     return <Redirect to="/login" />;
+//   }
+// }
+
+// export default Logout;

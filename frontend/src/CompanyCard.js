@@ -4,7 +4,7 @@ import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
 
 class CompanyCard extends Component {
   render() {
-    //change link to go to company page
+    //when link is clicked, go to company page
     return (
       <div>
         <Link to={`/companies/${this.props.handle}`}>

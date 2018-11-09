@@ -2,17 +2,16 @@ import axios from 'axios';
 const BASE_URL = 'http://localhost:3001';
 
 class JoblyApi {
+  //makes request to backend, takes in endpoint url, params (query or body of request), and request verb
   static async request(endpoint, params = {}, verb = 'get') {
-    // for now, hardcode a token for user "testuser"
-    let _token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc' +
-      '3R1c2VyIiwiaXNfYWRtaW4iOmZhbHNlLCJpYXQiOjE1NDE1NjQ2Nzl9.LYDHSkl81gEm' +
-      '7jfHv9wJhzD4ndpuBkSzBan8Nirb6UY';
+    let _token = localStorage.getItem('userToken');
 
     console.debug('API Call:', endpoint, params, verb);
 
     let q;
-
+    console.log(verb);
+    console.log(params);
+    //builds base url for request depending on verb
     if (verb === 'get') {
       q = axios.get(`${BASE_URL}/${endpoint}`, {
         params: { _token, ...params }
@@ -32,6 +31,7 @@ class JoblyApi {
     }
   }
 
+  //gets one company by handle, returns company data
   static async getCompany(handle) {
     try {
       let res = await this.request(`companies/${handle}`);
@@ -41,6 +41,7 @@ class JoblyApi {
     }
   }
 
+  //returns a list of companyObjects, filtered by search term
   static async getCompanies(queryObj) {
     try {
       let res = await this.request(`companies/`, queryObj);
@@ -50,6 +51,7 @@ class JoblyApi {
     }
   }
 
+  //returns a list of job Objects, filtered by search term
   static async getJobs(queryObj) {
     try {
       let res = await this.request(`jobs/`, queryObj);
@@ -59,6 +61,7 @@ class JoblyApi {
     }
   }
 
+  //logs in a user and returns token from backend
   static async login(bodyObj) {
     try {
       let res = await this.request(`login/`, bodyObj, 'post');
@@ -66,6 +69,41 @@ class JoblyApi {
     } catch (err) {
       throw err;
     }
+  }
+
+  //gets data about the current user (to set current User data in state)
+  static async getUser(username) {
+    try {
+      let res = await this.request(`users/${username}`);
+      return res.user;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  //makes post request to add user to backend and returns token if post is successful
+  static async registerUser(newUserObj) {
+    try {
+      let res = await this.request('users/', newUserObj, 'post');
+      return res.token;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  //makes patch request to update user to backend and returns updated user details
+  static async patchUser(username, patchUserObj) {
+    try {
+      let res = await this.request(`users/${username}`, patchUserObj, 'patch');
+      return res.user;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  static async applyJob(id) {
+    let res = await this.request(`jobs/${id}/apply`, {}, 'post');
+    return res.message;
   }
 }
 
