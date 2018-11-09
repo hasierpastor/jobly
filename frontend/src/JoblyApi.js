@@ -9,7 +9,6 @@ class JoblyApi {
     console.debug('API Call:', endpoint, params, verb);
 
     let q;
-    console.log(verb);
     console.log(params);
     //builds base url for request depending on verb
     if (verb === 'get') {
