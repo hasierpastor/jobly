@@ -9,7 +9,8 @@ class JoblyApi {
     console.debug('API Call:', endpoint, params, verb);
 
     let q;
-
+    console.log(verb);
+    console.log(params);
     //builds base url for request depending on verb
     if (verb === 'get') {
       q = axios.get(`${BASE_URL}/${endpoint}`, {
@@ -88,6 +89,21 @@ class JoblyApi {
     } catch (err) {
       throw err;
     }
+  }
+
+  //makes patch request to update user to backend and returns updated user details
+  static async patchUser(username, patchUserObj) {
+    try {
+      let res = await this.request(`users/${username}`, patchUserObj, 'patch');
+      return res.user;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  static async applyJob(id) {
+    let res = await this.request(`jobs/${id}/apply`, {}, 'post');
+    return res.message;
   }
 }
 

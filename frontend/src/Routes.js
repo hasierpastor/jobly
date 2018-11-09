@@ -28,13 +28,24 @@ class Routes extends Component {
           exact
           path="/jobs"
           currUser={this.props.currUser}
-          render={() => <JobList currUser={this.props.currUser} />}
+          render={() => (
+            <JobList
+              currUser={this.props.currUser}
+              updateUser={this.props.updateUser}
+            />
+          )}
         />
         <PrivateRoute
           exact
           path="/profile"
           currUser={this.props.currUser}
-          render={() => <UserProfile currUser={this.props.currUser} />}
+          render={() => (
+            <UserProfile
+              makeCurrUser={this.props.makeCurrUser}
+              currUser={this.props.currUser}
+              updateUser={this.props.updateUser}
+            />
+          )}
         />
         <PrivateRoute
           path="/companies/:company"

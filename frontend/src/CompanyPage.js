@@ -28,6 +28,7 @@ class CompanyPage extends Component {
     }
 
     let jobs = this.state.company.jobs.map(job => (
+      //CHANGE props passed to job card so shows applied/ not applied
       <JobCard
         title={job.title}
         salary={job.salary}

@@ -15,6 +15,7 @@ class App extends Component {
     };
     this.makeCurrUser = this.makeCurrUser.bind(this);
     this.doLogout = this.doLogout.bind(this);
+    this.updateUser = this.updateUser.bind(this);
   }
 
   //on refresh, check localstorage for token (is someone logged in)
@@ -48,6 +49,11 @@ class App extends Component {
     }
   }
 
+  async updateUser(user) {
+    this.setState({ currUser: user });
+    console.log(this.state.currUser);
+  }
+
   //deletes token from local storage, sets currUSer to null, passes updated state (currUser: null) to logout
   async doLogout() {
     localStorage.setItem('userToken', '');
@@ -69,6 +75,7 @@ class App extends Component {
         <Routes
           makeCurrUser={this.makeCurrUser}
           currUser={this.state.currUser}
+          updateUser={this.updateUser}
         />
       </div>
     );
