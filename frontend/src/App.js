@@ -4,7 +4,7 @@ import Routes from './Routes';
 import NavBar from './NavBar';
 import { decode } from 'jsonwebtoken';
 import JoblyApi from './JoblyApi';
-import { Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {

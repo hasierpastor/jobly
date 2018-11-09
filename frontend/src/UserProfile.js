@@ -10,7 +10,7 @@ class UserProfile extends Component {
       firstName: this.props.currUser.first_name,
       lastName: this.props.currUser.last_name,
       email: this.props.currUser.email,
-      photoUrl: this.props.currUser.photo_url,
+      photoUrl: this.props.currUser.photo_url || '',
       error: false
     };
     this.handleChange = this.handleChange.bind(this);
@@ -76,7 +76,7 @@ class UserProfile extends Component {
           <input
             type="url"
             name="photoUrl"
-            id="photUrl"
+            id="photoUrl"
             value={this.state.photoUrl}
             onChange={this.handleChange}
           />
