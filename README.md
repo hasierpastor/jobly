@@ -16,7 +16,10 @@ To see a live demo: https://jobilly.herokuapp.com/companies
 2. `npm install`
 3. `npm start`
 
-**Here's a sample of the JSON returned from the backend: **
+**Here's a sample of the JSON returned from the backend (a GET to '/jobs'): **
+
+Inline-style: 
+![alt text](https://github.com/SKaplan01/react_jobly/blob/master/images/backend.png "Sample JSON returned from GET to '/jobs'")
 
 
 Collaborators: https://github.com/hasierpastor/react_jobly
