@@ -1,4 +1,4 @@
-# react_jobly
+# Jobly
 
 Jobly is a mock app where users can view job postings and apply for open positions. The frontend was built with React and the backend was built with Node, Express, and PostgreSQL.
 
