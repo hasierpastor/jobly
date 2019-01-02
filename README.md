@@ -18,7 +18,7 @@ To see a live demo: https://jobilly.herokuapp.com/companies
 
 **Here's a sample of the JSON returned from the backend (a GET to '/jobs'):**
 
-Inline-style: 
+ 
 ![alt text](https://github.com/SKaplan01/react_jobly/blob/master/images/backend.png "Sample JSON returned from GET to '/jobs'")
 
 
