@@ -46,7 +46,7 @@ class CompanyList extends Component {
   async handleChange(evt) {
     console.log('handlechange ran!');
     this.setState({ search: evt.target.value });
-    _.debounce(await this.handleSubmit, 2000)();
+    _.debounce(await this.handleSubmit, 500)();
   }
 
   render() {
@@ -61,18 +61,20 @@ class CompanyList extends Component {
 
     let cards = this.state.companies.map(company => {
       return (
-        <CompanyCard
-          name={company.name}
-          description={company.description}
-          handle={company.handle}
-          key={company.handle}
-        />
+        <div className="cardHolder">
+          <CompanyCard
+            name={company.name}
+            description={company.description}
+            handle={company.handle}
+            key={company.handle}
+          />
+        </div>
       );
     });
 
     return (
-      <div>
-        <form>
+      <div className="list">
+        <form className="searchForm">
           <label htmlFor="search">Search</label>
           <input
             type="text"

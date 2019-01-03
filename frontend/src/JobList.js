@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JoblyApi from './JoblyApi';
 import JobCard from './JobCard';
+import './JobList.css';
 import _ from 'lodash';
 
 class JobList extends Component {
@@ -40,7 +41,7 @@ class JobList extends Component {
 
   async handleChange(evt) {
     this.setState({ search: evt.target.value }, () =>
-      _.debounce(this.handleSubmit, 1000)()
+      _.debounce(this.handleSubmit, 500)()
     );
   }
 
@@ -59,24 +60,26 @@ class JobList extends Component {
 
     let cards = this.state.jobs.map(job => {
       return (
-        <JobCard
-          title={job.title}
-          salary={job.salary}
-          equity={job.equity}
-          key={job.id}
-          id={job.id}
-          currUser={this.props.currUser}
-          updateUser={this.props.updateUser}
-          state={job.state}
-          //pass down a true or false property depending if job.id is in set of job ids user has applied to
-          hasApplied={jobIdsAppliedTo.has(job.id)}
-        />
+        <div className="cardHolder">
+          <JobCard
+            title={job.title}
+            salary={job.salary}
+            equity={job.equity}
+            key={job.id}
+            id={job.id}
+            currUser={this.props.currUser}
+            updateUser={this.props.updateUser}
+            state={job.state}
+            //pass down a true or false property depending if job.id is in set of job ids user has applied to
+            hasApplied={jobIdsAppliedTo.has(job.id)}
+          />
+        </div>
       );
     });
 
     return (
-      <div>
-        <form>
+      <div class="list">
+        <form className="searchForm">
           <label htmlFor="search">Search</label>
           <input
             type="text"
