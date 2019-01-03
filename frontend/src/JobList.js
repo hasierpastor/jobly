@@ -60,7 +60,7 @@ class JobList extends Component {
 
     let cards = this.state.jobs.map(job => {
       return (
-        <div className="cardHolder">
+        <div className="cardHolder" key={job.id + 'div'}>
           <JobCard
             title={job.title}
             salary={job.salary}
@@ -78,7 +78,7 @@ class JobList extends Component {
     });
 
     return (
-      <div class="list">
+      <div className="list">
         <form className="searchForm">
           <label htmlFor="search">Search</label>
           <input

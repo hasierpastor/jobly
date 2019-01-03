@@ -61,7 +61,7 @@ class CompanyList extends Component {
 
     let cards = this.state.companies.map(company => {
       return (
-        <div className="cardHolder">
+        <div className="cardHolder" key={company.handle + 'div'}>
           <CompanyCard
             name={company.name}
             description={company.description}
