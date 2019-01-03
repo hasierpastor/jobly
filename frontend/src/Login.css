@@ -2,20 +2,63 @@
   margin: 15px;
 }
 
-.container {
-  justify-content: center;
+.btn-group {
+  width: 90%;
+  padding: 0px;
 }
 
 .label {
-  width: 100px;
+  width: 80px;
 }
 
-.input {
-  margin-left: 20px;
-}
-
-.loginButton,
 .signUpButton,
+.loginButton {
+  margin-right: 3px;
+}
+
+form {
+  background-color: rgba(17, 17, 17, 0.808);
+  color: white;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 3em;
+  padding: 1em;
+  border-radius: 0.3em;
+}
+
+.formContainer {
+  text-align: left;
+}
+
+.formContainer label {
+  margin-left: 1em;
+}
+
+#submitRow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .submitButton {
-  margin: 7px;
+  width: 35%;
+  padding-left: 4em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+@media (min-width: 576px) {
+  .formContainer .col-sm-6 {
+    flex: 1 0 50%;
+    max-width: 70%;
+  }
+  .submitButton {
+    width: 35%;
+    padding-left: 4em;
+    margin-right: 5px;
+  }
+
+  #submitRow {
+    width: 95%;
+  }
 }

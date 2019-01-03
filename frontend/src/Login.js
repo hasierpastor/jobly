@@ -8,7 +8,6 @@ import {
   FormGroup,
   Label,
   Input,
-  FormText,
   Col,
   ButtonGroup
 } from 'reactstrap';
@@ -112,7 +111,7 @@ class Login extends Component {
 
   render() {
     const baseFormHtml = (
-      <div>
+      <div className="formContainer">
         <FormGroup className="formGroup" row>
           <Label className="label" htmlFor="username">
             Username
@@ -172,9 +171,11 @@ class Login extends Component {
           </ButtonGroup>
           <Form onSubmit={this.handleLogin}>
             {baseFormHtml}
-            <Button className="submitButton" color="success">
-              Submit
-            </Button>
+            <div id="submitRow">
+              <Button className="submitButton" color="primary">
+                Submit
+              </Button>
+            </div>
           </Form>
           <div>{this.state.error ? `${this.state.error}` : null}</div>
         </div>
@@ -200,57 +201,61 @@ class Login extends Component {
             SignUp
           </Button>
         </ButtonGroup>
-        <Form onSubmit={this.handleRegister}>
-          {baseFormHtml}
-          <FormGroup className="formGroup" row>
-            <Label className="label" htmlFor="firstName">
-              First Name
-            </Label>
-            <Col sm={6}>
-              <Input
-                className="input"
-                type="text"
-                name="firstName"
-                id="firstName"
-                value={this.state.firstName}
-                onChange={this.handleChange}
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup className="formGroup" row>
-            <Label className="label" htmlFor="lastName">
-              Last Name
-            </Label>
-            <Col sm={6}>
-              <Input
-                className="input"
-                type="text"
-                name="lastName"
-                id="lastName"
-                value={this.state.lastName}
-                onChange={this.handleChange}
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup className="formGroup" row>
-            <Label className="label" htmlFor="email">
-              Email
-            </Label>
-            <Col sm={6}>
-              <Input
-                className="input"
-                type="text"
-                name="email"
-                id="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-            </Col>
-          </FormGroup>
-          <Button className="submitButton" color="success">
-            Submit
-          </Button>
-        </Form>
+        <div className="formContainer">
+          <Form onSubmit={this.handleRegister}>
+            {baseFormHtml}
+            <FormGroup className="formGroup" row>
+              <Label className="label" htmlFor="firstName">
+                First Name
+              </Label>
+              <Col sm={6}>
+                <Input
+                  className="input"
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  value={this.state.firstName}
+                  onChange={this.handleChange}
+                />
+              </Col>
+            </FormGroup>
+            <FormGroup className="formGroup" row>
+              <Label className="label" htmlFor="lastName">
+                Last Name
+              </Label>
+              <Col sm={6}>
+                <Input
+                  className="input"
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  value={this.state.lastName}
+                  onChange={this.handleChange}
+                />
+              </Col>
+            </FormGroup>
+            <FormGroup className="formGroup" row>
+              <Label className="label" htmlFor="email">
+                Email
+              </Label>
+              <Col sm={6}>
+                <Input
+                  className="input"
+                  type="text"
+                  name="email"
+                  id="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                />
+              </Col>
+            </FormGroup>
+            <div id="submitRow">
+              <Button className="submitButton" color="primary">
+                Submit
+              </Button>
+            </div>
+          </Form>
+        </div>
         <div>{this.state.error ? `${this.state.error}` : null}</div>
       </div>
     );

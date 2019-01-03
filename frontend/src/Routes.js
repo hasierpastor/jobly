@@ -15,7 +15,13 @@ class Routes extends Component {
         <Route
           exact
           path="/"
-          render={() => <Home currUser={this.props.currUser} />}
+          render={props => (
+            <Home
+              {...props}
+              makeCurrUser={this.props.makeCurrUser}
+              currUser={this.props.currUser}
+            />
+          )}
         />
         <PrivateRoute
           exact
@@ -61,7 +67,7 @@ class Routes extends Component {
           exact
           path="/login"
           render={props => (
-            <Login
+            <Home
               {...props}
               makeCurrUser={this.props.makeCurrUser}
               currUser={this.props.currUser}
