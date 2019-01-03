@@ -1,0 +1,41 @@
+.list {
+  background-color: rgba(20, 20, 65, 0.87);
+}
+
+.searchForm {
+  width: 100%;
+  border-radius: 0;
+  background-color: rgba(44, 44, 44, 0.966);
+}
+
+.searchForm label {
+  margin-right: 0.6em;
+}
+
+.cardHolder {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 2em;
+}
+.CompanyHeader {
+  color: white;
+  padding: 1.5em;
+}
+
+.CompanyHeader p {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+@media (max-width: 660px) {
+  .cardHolder {
+    width: 80%;
+  }
+}
+
+@media (max-width: 661px) {
+  .CompanyHeader p {
+    width: 85%;
+  }
+}

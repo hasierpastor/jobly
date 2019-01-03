@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import JoblyApi from './JoblyApi';
+import './UserProfile.css';
+import { Alert, Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
+import defaultProfilePic from './images/defaultProfilePic.jpg';
 
 class UserProfile extends Component {
   constructor(props) {
@@ -31,7 +34,9 @@ class UserProfile extends Component {
         first_name: this.state.firstName,
         last_name: this.state.lastName,
         email: this.state.email,
-        photo_url: this.state.photoUrl || 'https://lorempixel.com/200/200'
+        photo_url:
+          this.state.photoUrl ||
+          'https://t3.ftcdn.net/jpg/00/64/67/52/240_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg'
       });
       this.props.updateUser(updatedUser);
       this.setState({ password: '' });
@@ -44,53 +49,125 @@ class UserProfile extends Component {
   }
 
   render() {
+    let error = this.state.error ? (
+      <Alert color="warning">
+        {this.state.error ? `${this.state.error}` : null}
+      </Alert>
+    ) : null;
+
     return (
-      <div>
-        <form onSubmit={this.handleUpdate}>
-          <p htmlFor="username">Username: {this.props.currUser.username}</p>
-          <label htmlFor="firstName">First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            value={this.state.firstName}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            value={this.state.lastName}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="photoUrl">Photo Url</label>
-          <input
-            type="url"
-            name="photoUrl"
-            id="photoUrl"
-            value={this.state.photoUrl}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Re-enter Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
-          <button>Save Changes</button>
-        </form>
-        <div>{this.state.error ? `${this.state.error}` : null}</div>
+      <div className="background">
+        <div id="profileContainer">
+          <div className="formContainer">
+            <Form onSubmit={this.handleUpdate}>
+              <div className="picRow">
+                <div id="profilePicContainer">
+                  <img
+                    id="profilePic"
+                    src={this.props.currUser.photo_url || defaultProfilePic}
+                    alt="profile_picture"
+                  />
+                </div>
+              </div>
+              <FormGroup className="formGroup" row>
+                <Label className="label" htmlFor="username">
+                  Username:
+                </Label>
+                <Col sm={6}>
+                  <Input
+                    className="input"
+                    type="text"
+                    disabled={true}
+                    name="userName"
+                    id="userName"
+                    value={this.props.currUser.username}
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup className="formGroup" row>
+                <Label className="label" htmlFor="firstName">
+                  First Name
+                </Label>
+                <Col sm={6}>
+                  <Input
+                    className="input"
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    value={this.state.firstName}
+                    onChange={this.handleChange}
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup className="formGroup" row>
+                <Label className="label" htmlFor="lastName">
+                  Last Name
+                </Label>
+                <Col sm={6}>
+                  <Input
+                    className="input"
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    value={this.state.lastName}
+                    onChange={this.handleChange}
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup className="formGroup" row>
+                <Label className="label" htmlFor="email">
+                  Email
+                </Label>
+                <Col sm={6}>
+                  <Input
+                    className="input"
+                    type="text"
+                    name="email"
+                    id="email"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup className="formGroup" row>
+                <Label className="label" htmlFor="photoUrl">
+                  Photo Url
+                </Label>
+                <Col sm={6}>
+                  <Input
+                    className="input"
+                    type="url"
+                    name="photoUrl"
+                    id="photoUrl"
+                    value={this.state.photoUrl}
+                    onChange={this.handleChange}
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup className="formGroup" row>
+                <Label className="label" htmlFor="password">
+                  Re-enter Password
+                </Label>
+                <Col sm={6}>
+                  <Input
+                    className="input"
+                    type="password"
+                    name="password"
+                    id="password"
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                  />
+                </Col>
+              </FormGroup>
+              <div id="submitRow">
+                <Button className="submitButton" color="primary">
+                  Save Changes
+                </Button>
+              </div>
+              {error}
+            </Form>
+          </div>
+        </div>
       </div>
     );
   }

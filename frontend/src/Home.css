@@ -1,0 +1,43 @@
+#HomeContainer {
+  background-image: url('./images/office.jpg');
+  min-height: 100vh;
+  padding-top: 3em;
+  padding-bottom: 4em;
+}
+
+.backDrop {
+  background-color: rgba(236, 234, 234, 0.575);
+  width: 80vw;
+  max-width: 30em;
+  min-height: 10em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.3em;
+}
+
+#HomeContainer h1 {
+  padding-top: 0.7em;
+  margin-bottom: 0.6em;
+}
+
+.linkButton {
+  width: 30%;
+  margin-bottom: 2em;
+}
+
+.linkButton > a {
+  color: white;
+}
+
+.linkButton > a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 456px) {
+  #HomeContainer h1 {
+    font-size: 2em;
+  }
+}

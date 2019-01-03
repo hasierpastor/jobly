@@ -34,23 +34,27 @@ class CompanyPage extends Component {
 
     let jobs = this.state.company.jobs.map(job => (
       //CHANGE props passed to job card so shows applied/ not applied
-      <JobCard
-        title={job.title}
-        salary={job.salary}
-        equity={job.equity}
-        key={job.id}
-        hasApplied={jobIdsAppliedTo.has(job.id)}
-        id={job.id}
-        state={job.state}
-        currUser={this.props.currUser}
-        updateUser={this.props.updateUser}
-      />
+      <div className="cardHolder" key={job.id + 'div'}>
+        <JobCard
+          title={job.title}
+          salary={job.salary}
+          equity={job.equity}
+          key={job.id}
+          hasApplied={jobIdsAppliedTo.has(job.id)}
+          id={job.id}
+          state={job.state}
+          currUser={this.props.currUser}
+          updateUser={this.props.updateUser}
+        />
+      </div>
     ));
 
     return (
-      <div className="CompanyPage">
-        <h1>{this.state.company.name}</h1>
-        <p>{this.state.company.description}</p>
+      <div className="list">
+        <div className="CompanyHeader">
+          <h1>{this.state.company.name}</h1>
+          <p>{this.state.company.description}</p>
+        </div>
         {jobs}
       </div>
     );
