@@ -26,7 +26,7 @@ class App extends Component {
       let token = localStorage.getItem('userToken');
       if (token) {
         let username = decode(token).username;
-        let user = await JoblyApi.getUser(username);
+        let user = await JoblyApi.getUser(username); //from payload
         this.setState({ currUser: user, isLoading: false });
       } else {
         this.setState({ isLoading: false });
@@ -41,7 +41,7 @@ class App extends Component {
   async makeCurrUser(token) {
     try {
       localStorage.setItem('userToken', token);
-      let username = decode(token).username;
+      let username = decode(token).username; // from payload
       let user = await JoblyApi.getUser(username);
       this.setState({ currUser: user });
     } catch (err) {

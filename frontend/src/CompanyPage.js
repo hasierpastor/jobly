@@ -7,6 +7,7 @@ class CompanyPage extends Component {
     super(props);
     this.state = { isLoading: true, company: {} };
   }
+
   //after CompanyPage mounts, gets company info from backend and add to state
   async componentDidMount() {
     try {

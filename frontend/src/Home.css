@@ -1,12 +1,16 @@
 #HomeContainer {
-  background-image: url('./images/office.jpg');
+  background-image: url('./images/white-abstract.jpeg');
   min-height: 100vh;
   padding-top: 3em;
   padding-bottom: 4em;
+  font-family: 'Lato';
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .backDrop {
-  background-color: rgba(236, 234, 234, 0.575);
   width: 80vw;
   max-width: 30em;
   min-height: 10em;
@@ -20,6 +24,9 @@
 #HomeContainer h1 {
   padding-top: 0.7em;
   margin-bottom: 0.6em;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: bold;
+  font-size: 50px;
 }
 
 .linkButton {

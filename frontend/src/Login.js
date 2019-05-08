@@ -155,15 +155,16 @@ class Login extends Component {
           <ButtonGroup>
             <Button
               className="loginButton"
-              color="primary"
-              active
+              outline
+              color="secondary"
               onClick={this.isLogin}
             >
               Login
             </Button>
             <Button
               className="signUpButton"
-              color="primary"
+              outline
+              color="secondary"
               onClick={this.isSignup}
             >
               SignUp
@@ -172,7 +173,7 @@ class Login extends Component {
           <Form onSubmit={this.handleLogin}>
             {baseFormHtml}
             <div id="submitRow">
-              <Button className="submitButton" color="primary">
+              <Button className="submitButton" outline color="secondary">
                 Submit
               </Button>
             </div>
@@ -186,14 +187,16 @@ class Login extends Component {
       <div className="container">
         <ButtonGroup>
           <Button
-            color="primary"
+            outline
+            color="secondary"
             className="loginButton"
             onClick={this.isLogin}
           >
             Login
           </Button>
           <Button
-            color="primary"
+            outline
+            color="secondary"
             active
             className="signUpButton"
             onClick={this.isSignup}
@@ -250,7 +253,7 @@ class Login extends Component {
               </Col>
             </FormGroup>
             <div id="submitRow">
-              <Button className="submitButton" color="primary">
+              <Button className="submitButton" outline color="secondary">
                 Submit
               </Button>
             </div>

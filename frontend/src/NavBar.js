@@ -21,8 +21,8 @@ class NavBar extends Component {
     if (!this.props.currUser) {
       return (
         <nav>
-          <NavLink to="/">Jobly</NavLink>
-          <NavLink to="/login">Log in</NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/login">Log In</NavLink>
         </nav>
       );
     }
@@ -30,7 +30,7 @@ class NavBar extends Component {
       <div>
         <Navbar color="light" light expand="md">
           <NavLink id="brandLink" exact to="/">
-            Jobly
+            Home
           </NavLink>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

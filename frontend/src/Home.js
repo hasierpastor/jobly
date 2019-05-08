@@ -28,7 +28,7 @@ class Home extends Component {
     return (
       <div id="HomeContainer">
         <div className="backDrop">
-          <h1>Welcome to Jobly</h1>
+          <h1>jobly</h1>
           {content}
         </div>
       </div>
