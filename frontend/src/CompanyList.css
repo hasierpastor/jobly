@@ -18,14 +18,18 @@
   content: '';
 }
 
-/* .companyHeader {
-  color: #141e30;
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: bold;
-} */
-
 .cardHolder {
   display: inline-block;
   margin: 25px;
-  width: 400px;
+  width: 700px;
+}
+
+#searchLabel {
+  color: #141e30;
+  font-family: 'Lato';
+  margin: 0.5rem;
+}
+
+.searchForm {
+  background-color: transparent;
 }

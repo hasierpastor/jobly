@@ -76,7 +76,9 @@ class CompanyList extends Component {
     return (
       <div className="companyList">
         <form className="searchForm">
-          <label htmlFor="search">Search</label>
+          <label id="searchLabel" htmlFor="search">
+            Search
+          </label>
           <input
             type="text"
             name="search"

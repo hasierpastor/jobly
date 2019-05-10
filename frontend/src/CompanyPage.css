@@ -1,10 +1,11 @@
 .companyPage {
+  width: 100vw;
+  height: 100vw;
   position: relative;
 }
 
 .companyPage::after {
   background-image: url('./images/architectural-design-architecture-blue-sky-442577.jpg');
-  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   opacity: 0.6;
@@ -16,16 +17,24 @@
   position: absolute;
   z-index: -1;
   content: '';
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .companyHeader {
   color: #141e30;
   font-family: 'Rajdhani', sans-serif;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .cardHolder {
   display: inline-block;
   margin: 25px;
   width: 400px;
+}
+
+p {
+  font-size: 1.2rem;
 }

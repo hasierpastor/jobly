@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import JoblyApi from './JoblyApi';
 import JobCard from './JobCard';
-import './JobList.css';
 import _ from 'lodash';
+
+import './JobList.css';
 
 class JobList extends Component {
   constructor(props) {
@@ -78,9 +79,11 @@ class JobList extends Component {
     });
 
     return (
-      <div className="list">
+      <div className="jobList">
         <form className="searchForm">
-          <label htmlFor="search">Search</label>
+          <label id="searchLabel" htmlFor="search">
+            Search
+          </label>
           <input
             type="text"
             name="search"

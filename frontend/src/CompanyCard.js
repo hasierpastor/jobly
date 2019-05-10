@@ -19,8 +19,8 @@ class CompanyCard extends Component {
               color: 'white',
               fontFamily: 'Lato',
               opacity: 0.8,
-              width: '720px',
-              height: '120px'
+              border: 'solid 1px',
+              borderColor: '#141e30'
             }}
           >
             <CardBody id="cardBody">
