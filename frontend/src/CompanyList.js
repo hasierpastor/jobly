@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import JoblyApi from './JoblyApi';
 import CompanyCard from './CompanyCard';
 import _ from 'lodash';
+import './CompanyList.css';
 
 class CompanyList extends Component {
   constructor(props) {
@@ -73,7 +74,7 @@ class CompanyList extends Component {
     });
 
     return (
-      <div className="list">
+      <div className="companyList">
         <form className="searchForm">
           <label htmlFor="search">Search</label>
           <input

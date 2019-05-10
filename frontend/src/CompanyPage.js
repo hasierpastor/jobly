@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JobCard from './JobCard';
 import JoblyApi from './JoblyApi';
+import './CompanyPage.css';
 
 class CompanyPage extends Component {
   constructor(props) {
@@ -51,9 +52,9 @@ class CompanyPage extends Component {
     ));
 
     return (
-      <div className="list">
-        <div className="CompanyHeader">
-          <h1>{this.state.company.name}</h1>
+      <div className="companyPage">
+        <div className="companyHeader">
+          <h1 id="header">{this.state.company.name}</h1>
           <p>{this.state.company.description}</p>
         </div>
         {jobs}

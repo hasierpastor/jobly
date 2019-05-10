@@ -1,0 +1,31 @@
+.companyPage {
+  position: relative;
+}
+
+.companyPage::after {
+  background-image: url('./images/architectural-design-architecture-blue-sky-442577.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.6;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  content: '';
+}
+
+.companyHeader {
+  color: #141e30;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: bold;
+}
+
+.cardHolder {
+  display: inline-block;
+  margin: 25px;
+  width: 400px;
+}

@@ -1,0 +1,9 @@
+#cardBody:hover {
+  background-color: #42b7ce;
+}
+
+@media (max-width: 660px) {
+  #CardBody {
+    width: 80%;
+  }
+}

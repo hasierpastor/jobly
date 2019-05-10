@@ -161,6 +161,7 @@ class Login extends Component {
               Login
             </Button>
             <Button
+              outline
               style={{ backgroundColor: '#141e30', color: 'white' }}
               className="signUpButton"
               onClick={this.isSignup}
@@ -173,6 +174,7 @@ class Login extends Component {
             <div id="submitRow">
               <Button
                 style={{ backgroundColor: '#141e30', color: 'white' }}
+                outline
                 className="submitButton"
               >
                 Submit
@@ -195,6 +197,7 @@ class Login extends Component {
             Login
           </Button>
           <Button
+            outline
             style={{ backgroundColor: '#141e30', color: 'white' }}
             className="signUpButton"
             onClick={this.isSignup}
@@ -252,6 +255,7 @@ class Login extends Component {
             </FormGroup>
             <div id="submitRow">
               <Button
+                outline
                 className="submitButton"
                 style={{ backgroundColor: '#141e30', color: 'white' }}
               >

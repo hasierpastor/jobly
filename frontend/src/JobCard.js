@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardText, CardBody, CardTitle, Button } from 'reactstrap';
 import JoblyApi from './JoblyApi';
 
 class JobCard extends Component {
@@ -20,14 +20,26 @@ class JobCard extends Component {
     //if hasApplied props is true display applied otherwise display apply
     return (
       <div>
-        <Card>
+        <Card
+          style={{
+            margin: '1rem',
+            backgroundColor: '#141e30',
+            color: 'white',
+            fontFamily: 'Lato',
+            opacity: 0.8
+          }}
+        >
           <CardBody>
             <CardTitle>{this.props.title}</CardTitle>
             <CardText>Salary: {this.props.salary}</CardText>
             <CardText>Equity: {this.props.equity}</CardText>
-            <button onClick={() => this.handleClick(this.props.id)}>
+            <Button
+              style={{ color: 'white' }}
+              outline
+              onClick={() => this.handleClick(this.props.id)}
+            >
               {this.props.hasApplied ? 'Applied' : 'Apply'}
-            </button>
+            </Button>
           </CardBody>
         </Card>
       </div>
