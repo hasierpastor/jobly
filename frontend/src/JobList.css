@@ -1,11 +1,14 @@
 .list {
-  background-color: rgba(20, 20, 65, 0.87);
+  background-image: url('./images/architectural-design-architecture-blue-sky-442577.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .searchForm {
   width: 100%;
   border-radius: 0;
-  background-color: rgba(44, 44, 44, 0.966);
+  background-color: transparent;
 }
 
 .searchForm label {
