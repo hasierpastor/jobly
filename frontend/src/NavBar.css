@@ -1,8 +1,19 @@
 nav {
-  background-color: white;
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   text-align: center;
   font-weight: bold;
-  border-bottom: solid 2px black;
+  color: white;
+  border-bottom: solid 1px white;
   font-family: 'Titillium Web';
   font-size: 1.2em;
 }
@@ -12,7 +23,7 @@ nav button {
   padding: 0.5em 0;
   width: 7em;
   display: inline-block;
-  color: black;
+  color: grey;
   text-decoration: none;
   text-align: right;
 }
@@ -24,18 +35,12 @@ nav a.active {
 
 nav a:hover,
 nav button:hover {
-  color: black;
+  color: grey;
   text-decoration: none;
 }
 
 #brandLink {
   text-align: left;
-}
-
-button {
-  background-color: grey;
-  border: none;
-  font-weight: bold;
 }
 
 .nav-item {
@@ -44,4 +49,17 @@ button {
 
 .navbar-light .navbar-toggler {
   border: none;
+}
+
+.navlink {
+  color: lightgray;
+  margin: 2px;
+}
+
+#logoutButton {
+  margin: 7px;
+  background-color: #141e30;
+  border: none;
+  font-family: 'Titillium Web';
+  color: grey;
 }

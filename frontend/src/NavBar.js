@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  Nav,
+  NavItem,
+  Button
+} from 'reactstrap';
 import './NavBar.css';
 
 class NavBar extends Component {
@@ -21,15 +28,19 @@ class NavBar extends Component {
     if (!this.props.currUser) {
       return (
         <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/login">Log In</NavLink>
+          <NavLink class="navlink" to="/">
+            Home
+          </NavLink>
+          <NavLink class="navlink" to="/login">
+            Log In
+          </NavLink>
         </nav>
       );
     }
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavLink id="brandLink" exact to="/">
+          <NavLink class="navlink" id="brandLink" exact to="/">
             Home
           </NavLink>
           <NavbarToggler onClick={this.toggle} />
@@ -45,7 +56,9 @@ class NavBar extends Component {
                 <NavLink to="/profile">Profile</NavLink>
               </NavItem>
               <NavItem>
-                <button onClick={this.props.doLogout}>Log out</button>
+                <Button id="logoutButton" onClick={this.props.doLogout}>
+                  Log out
+                </Button>
               </NavItem>
             </Nav>
           </Collapse>

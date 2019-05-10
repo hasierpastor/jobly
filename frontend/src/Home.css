@@ -1,5 +1,5 @@
 #HomeContainer {
-  background-image: url('./images/white-abstract.jpeg');
+  background-image: url('./images/fuse-brussels-273780-unsplash.jpg');
   min-height: 100vh;
   padding-top: 3em;
   padding-bottom: 4em;
@@ -22,6 +22,7 @@
 }
 
 #HomeContainer h1 {
+  color: #141e30;
   padding-top: 0.7em;
   margin-bottom: 0.6em;
   font-family: 'Rajdhani', sans-serif;

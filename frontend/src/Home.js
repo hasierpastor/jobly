@@ -18,7 +18,10 @@ class Home extends Component {
       content = (
         <div>
           <NavLink to="/jobs">
-            <Button className="linkButton" color="primary">
+            <Button
+              style={{ backgroundColor: '#141e30', color: 'white' }}
+              className="linkButton"
+            >
               View Jobs
             </Button>
           </NavLink>

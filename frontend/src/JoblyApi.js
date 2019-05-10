@@ -9,7 +9,6 @@ class JoblyApi {
     console.debug('API Call:', endpoint, params, verb);
 
     let q;
-    console.log(params);
     //builds base url for request depending on verb
     if (verb === 'get') {
       q = axios.get(`${BASE_URL}/${endpoint}`, {

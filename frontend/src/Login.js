@@ -154,17 +154,15 @@ class Login extends Component {
         <div className="container">
           <ButtonGroup>
             <Button
+              style={{ backgroundColor: '#141e30', color: 'white' }}
               className="loginButton"
-              outline
-              color="secondary"
               onClick={this.isLogin}
             >
               Login
             </Button>
             <Button
+              style={{ backgroundColor: '#141e30', color: 'white' }}
               className="signUpButton"
-              outline
-              color="secondary"
               onClick={this.isSignup}
             >
               SignUp
@@ -173,7 +171,10 @@ class Login extends Component {
           <Form onSubmit={this.handleLogin}>
             {baseFormHtml}
             <div id="submitRow">
-              <Button className="submitButton" outline color="secondary">
+              <Button
+                style={{ backgroundColor: '#141e30', color: 'white' }}
+                className="submitButton"
+              >
                 Submit
               </Button>
             </div>
@@ -187,17 +188,14 @@ class Login extends Component {
       <div className="container">
         <ButtonGroup>
           <Button
-            outline
-            color="secondary"
+            style={{ backgroundColor: '#141e30', color: 'white' }}
             className="loginButton"
             onClick={this.isLogin}
           >
             Login
           </Button>
           <Button
-            outline
-            color="secondary"
-            active
+            style={{ backgroundColor: '#141e30', color: 'white' }}
             className="signUpButton"
             onClick={this.isSignup}
           >
@@ -253,7 +251,10 @@ class Login extends Component {
               </Col>
             </FormGroup>
             <div id="submitRow">
-              <Button className="submitButton" outline color="secondary">
+              <Button
+                className="submitButton"
+                style={{ backgroundColor: '#141e30', color: 'white' }}
+              >
                 Submit
               </Button>
             </div>
