@@ -58,9 +58,7 @@ class App extends Component {
   async doLogout() {
     localStorage.setItem('userToken', '');
     //app is able to access props.history because we are using withRouter
-    this.setState({ currUser: null }, props =>
-      this.props.history.push('/login')
-    ); //callback to use history.push lookup: withRouter
+    this.setState({ currUser: null }); //callback to use history.push lookup: withRouter
   }
 
   render() {

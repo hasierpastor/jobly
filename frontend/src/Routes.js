@@ -6,7 +6,6 @@ import CompanyList from './CompanyList';
 import CompanyPage from './CompanyPage';
 import JobList from './JobList';
 import UserProfile from './UserProfile';
-import Login from './Login';
 
 class Routes extends Component {
   render() {

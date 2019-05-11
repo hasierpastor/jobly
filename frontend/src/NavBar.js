@@ -6,7 +6,8 @@ import {
   NavbarToggler,
   Nav,
   NavItem,
-  Button
+  Button,
+  NavbarBrand
 } from 'reactstrap';
 import './NavBar.css';
 
@@ -37,13 +38,13 @@ class NavBar extends Component {
     }
     return (
       <div>
-        <Navbar expand="md">
+        <Navbar light expand="md">
           <NavLink id="brandLink" exact to="/">
             Home
           </NavLink>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" onClick={this.toggle} navbar>
+            <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink to="/companies">Companies</NavLink>
               </NavItem>
@@ -54,9 +55,9 @@ class NavBar extends Component {
                 <NavLink to="/profile">Profile</NavLink>
               </NavItem>
               <NavItem>
-                <Button id="logoutButton" onClick={this.props.doLogout}>
+                <NavLink to="/" onClick={this.props.doLogout}>
                   Log out
-                </Button>
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>

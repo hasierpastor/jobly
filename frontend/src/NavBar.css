@@ -34,6 +34,10 @@ nav button:hover {
   color: lightgray;
 }
 
+#brandLink:hover {
+  color: grey;
+}
+
 .nav-item {
   text-align: right;
 }
@@ -49,12 +53,14 @@ nav button:hover {
 
 #logoutButton {
   margin: 3.5px;
+  margin-right: 0px;
   background-color: #243b55;
   border: none;
   font-family: 'Titillium Web';
   font-size: 19.2px;
   font-weight: bold;
   color: lightgray;
+  padding: 0px;
 }
 
 #logoutButton:hover {
