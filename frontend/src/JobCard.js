@@ -10,9 +10,7 @@ class JobCard extends Component {
 
   async handleClick(id) {
     await JoblyApi.applyJob(id);
-    console.log(this.props.currUser);
     let user = await JoblyApi.getUser(this.props.currUser.username);
-    console.log(this.props);
     await this.props.updateUser(user);
   }
 

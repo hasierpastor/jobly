@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import { decode } from 'jsonwebtoken';
 import JoblyApi from './JoblyApi';
 import { withRouter } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
 class App extends Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class App extends Component {
 
   render() {
     if (this.state.isLoading) {
-      return <div>Loading...</div>;
+      return <Loader type="ThreeDots" color="#42b7ce" height="80" width="80" />;
     }
 
     //pass currUser to routes if logged in

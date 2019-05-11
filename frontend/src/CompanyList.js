@@ -3,6 +3,7 @@ import JoblyApi from './JoblyApi';
 import CompanyCard from './CompanyCard';
 import _ from 'lodash';
 import './CompanyList.css';
+import Loader from 'react-loader-spinner';
 
 class CompanyList extends Component {
   constructor(props) {
@@ -31,7 +32,6 @@ class CompanyList extends Component {
   //when search form is submitted, makes request to backend with searchterm
   //{search: searchtermFromForm} --> defaults to {} if no search term
   async handleSubmit(evt) {
-    console.log('handlesubmit ran!');
     try {
       let companies = await JoblyApi.getCompanies({
         search: this.state.search
@@ -51,9 +51,8 @@ class CompanyList extends Component {
   }
 
   render() {
-    console.log('RENDERING');
     if (this.state.isLoading) {
-      return <div>LOADING....</div>;
+      return <Loader type="ThreeDots" color="#42b7ce" height="80" width="80" />;
     }
 
     if (!this.state.companies) {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import JoblyApi from './JoblyApi';
 import JobCard from './JobCard';
 import _ from 'lodash';
-
+import Loader from 'react-loader-spinner';
 import './JobList.css';
 
 class JobList extends Component {
@@ -51,8 +51,9 @@ class JobList extends Component {
     const jobIdsAppliedTo = new Set(
       this.props.currUser.jobs.map(job => job.id)
     );
+
     if (this.state.isLoading) {
-      return <div>LOADING....</div>;
+      return <Loader type="ThreeDots" color="#42b7ce" height="80" width="80" />;
     }
 
     if (!this.state.jobs) {

@@ -5,6 +5,12 @@ import { NavLink } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true
+    };
+  }
   render() {
     let content;
     if (!this.props.currUser) {

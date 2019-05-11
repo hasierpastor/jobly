@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import JobCard from './JobCard';
 import JoblyApi from './JoblyApi';
 import './CompanyPage.css';
+import Loader from 'react-loader-spinner';
 
 class CompanyPage extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class CompanyPage extends Component {
     );
 
     if (this.state.isLoading) {
-      return <div>LOADING....</div>;
+      return <Loader type="ThreeDots" color="#42b7ce" height="80" width="80" />;
     }
 
     if (!this.state.company) {
