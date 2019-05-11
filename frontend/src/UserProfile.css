@@ -3,18 +3,17 @@
 }
 
 .background::after {
-  background-image: url('./images/airplane-architecture-buildings-1157255.jpg');
+  background-image: url('./images/camera-coffee-composition-1509428.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  opacity: 0.7;
+  opacity: 0.6;
   z-index: -1;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;
   content: '';
 }
 
@@ -22,6 +21,8 @@
   padding: 2em;
   width: 70%;
   margin: 0 auto;
+  opacity: 1;
+  font-family: 'Lato';
 }
 
 #submitRow {
@@ -57,8 +58,8 @@
   margin-bottom: 1.5em;
 }
 
-@media (max-width: 456px) {
+/* @media (max-width: 456px) {
   #profileContainer {
     width: 90%;
   }
-}
+} */

@@ -160,7 +160,11 @@ class UserProfile extends Component {
                 </Col>
               </FormGroup>
               <div id="submitRow">
-                <Button className="submitButton" color="primary">
+                <Button
+                  outline
+                  style={{ color: 'white' }}
+                  className="submitButton"
+                >
                   Save Changes
                 </Button>
               </div>

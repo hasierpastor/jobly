@@ -154,7 +154,12 @@ class Login extends Component {
         <div className="container">
           <ButtonGroup>
             <Button
-              style={{ backgroundColor: '#141e30', color: 'white' }}
+              outline
+              style={{
+                backgroundColor: '#141e30',
+                color: 'white',
+                opacity: '0.9'
+              }}
               className="loginButton"
               onClick={this.isLogin}
             >
@@ -162,7 +167,11 @@ class Login extends Component {
             </Button>
             <Button
               outline
-              style={{ backgroundColor: '#141e30', color: 'white' }}
+              style={{
+                backgroundColor: '#141e30',
+                color: 'white',
+                opacity: '0.9'
+              }}
               className="signUpButton"
               onClick={this.isSignup}
             >
@@ -190,7 +199,12 @@ class Login extends Component {
       <div className="container">
         <ButtonGroup>
           <Button
-            style={{ backgroundColor: '#141e30', color: 'white' }}
+            outline
+            style={{
+              backgroundColor: '#141e30',
+              color: 'white',
+              opacity: '0.9'
+            }}
             className="loginButton"
             onClick={this.isLogin}
           >
@@ -198,7 +212,11 @@ class Login extends Component {
           </Button>
           <Button
             outline
-            style={{ backgroundColor: '#141e30', color: 'white' }}
+            style={{
+              backgroundColor: '#141e30',
+              color: 'white',
+              opacity: '0.9'
+            }}
             className="signUpButton"
             onClick={this.isSignup}
           >

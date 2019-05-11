@@ -19,7 +19,13 @@ class Home extends Component {
         <div>
           <NavLink to="/jobs">
             <Button
-              style={{ backgroundColor: '#141e30', color: 'white' }}
+              style={{
+                backgroundColor: '#141e30',
+                color: 'white',
+                width: '8rem',
+                height: '3rem',
+                opacity: '0.8'
+              }}
               className="linkButton"
             >
               View Jobs

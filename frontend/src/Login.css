@@ -16,6 +16,11 @@
   margin-right: 3px;
 }
 
+.signUpButton,
+.loginButton:hover {
+  background-color: lightgrey;
+}
+
 form {
   background-color: #141e30;
   color: white;
@@ -25,6 +30,7 @@ form {
   padding: 1em;
   border-radius: 0.3em;
   font-weight: bold;
+  opacity: 0.9;
 }
 
 .formContainer {
@@ -46,6 +52,10 @@ form {
   padding-left: 4em;
   margin-top: 0.6em;
   margin-bottom: 0.6em;
+}
+
+.submitButton:hover {
+  background-color: lightgray;
 }
 
 @media (min-width: 576px) {
