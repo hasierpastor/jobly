@@ -71,7 +71,7 @@ class UserProfile extends Component {
               </div>
               <FormGroup className="formGroup" row>
                 <Label className="label" htmlFor="username">
-                  Username:
+                  Username
                 </Label>
                 <Col sm={6}>
                   <Input

@@ -20,7 +20,8 @@ class CompanyCard extends Component {
               fontFamily: 'Lato',
               opacity: 0.8,
               border: 'solid 1px',
-              borderColor: '#141e30'
+              borderColor: '#141e30',
+              height: '14rem'
             }}
           >
             <CardBody id="cardBody">

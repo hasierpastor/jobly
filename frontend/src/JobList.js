@@ -81,10 +81,10 @@ class JobList extends Component {
     return (
       <div className="jobList">
         <form className="searchForm">
-          <label id="searchLabel" htmlFor="search">
-            Search
-          </label>
+          <label id="searchLabel" htmlFor="search" />
           <input
+            class="searchInput"
+            placeholder="What job are you interested in?"
             type="text"
             name="search"
             id="search"

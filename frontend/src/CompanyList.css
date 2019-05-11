@@ -18,18 +18,31 @@
   content: '';
 }
 
+/* #searchLabel {
+  color: #141e30;
+  font-family: 'Lato';
+  margin: 0.5rem;
+} */
+
+.searchForm {
+  background-color: transparent;
+}
+
+.searchInput {
+  width: 20rem;
+  border: 1px solid #42b7ce;
+  border-radius: 5px;
+  padding: 5px;
+  height: 2rem;
+  outline: none;
+}
+
+.searchInput:focus {
+  color: darkgrey;
+}
+
 .cardHolder {
   display: inline-block;
   margin: 25px;
   width: 700px;
-}
-
-#searchLabel {
-  color: #141e30;
-  font-family: 'Lato';
-  margin: 0.5rem;
-}
-
-.searchForm {
-  background-color: transparent;
 }

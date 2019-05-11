@@ -26,7 +26,8 @@ class JobCard extends Component {
             backgroundColor: '#141e30',
             color: 'white',
             fontFamily: 'Lato',
-            opacity: 0.8
+            opacity: 0.8,
+            height: '14rem'
           }}
         >
           <CardBody>

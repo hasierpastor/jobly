@@ -1,3 +1,23 @@
+.background {
+  position: relative;
+}
+
+.background::after {
+  background-image: url('./images/airplane-architecture-buildings-1157255.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.7;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  content: '';
+}
+
 #profileContainer {
   padding: 2em;
   width: 70%;
@@ -15,13 +35,6 @@
 
 .submitButton {
   width: 8em;
-}
-
-.background {
-  background-image: url('./images/office.jpg');
-  min-height: 100vh;
-  padding-top: 3em;
-  padding-bottom: 4em;
 }
 
 #profilePic {
