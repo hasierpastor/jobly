@@ -15,6 +15,23 @@ class JobCard extends Component {
   }
 
   render() {
+    let button = this.props.hasApplied ? (
+      <Button
+        style={{ opacity: 2, color: 'white', backgroundColor: '#42b7ce' }}
+        outline
+      >
+        {' '}
+        Applied
+      </Button>
+    ) : (
+      <Button
+        style={{ color: 'white' }}
+        outline
+        onClick={() => this.handleClick(this.props.id)}
+      >
+        Apply
+      </Button>
+    );
     //if hasApplied props is true display applied otherwise display apply
     return (
       <div>
@@ -32,13 +49,7 @@ class JobCard extends Component {
             <CardTitle>{this.props.title}</CardTitle>
             <CardText>Salary: {this.props.salary}</CardText>
             <CardText>Equity: {this.props.equity}</CardText>
-            <Button
-              style={{ color: 'white' }}
-              outline
-              onClick={() => this.handleClick(this.props.id)}
-            >
-              {this.props.hasApplied ? 'Applied' : 'Apply'}
-            </Button>
+            {button}
           </CardBody>
         </Card>
       </div>

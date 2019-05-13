@@ -50,7 +50,7 @@ class UserProfile extends Component {
 
   render() {
     let error = this.state.error ? (
-      <Alert color="warning">
+      <Alert color="danger">
         {this.state.error ? `${this.state.error}` : null}
       </Alert>
     ) : null;

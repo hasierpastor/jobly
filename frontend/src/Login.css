@@ -14,11 +14,7 @@
 .signUpButton,
 .loginButton {
   margin-right: 3px;
-}
-
-.signUpButton,
-.loginButton:hover {
-  background-color: lightgrey;
+  background-color: #141e30;
 }
 
 form {
@@ -54,21 +50,10 @@ form {
   margin-bottom: 0.6em;
 }
 
-.submitButton:hover {
-  background-color: lightgray;
-}
-
 @media (min-width: 576px) {
   .formContainer .col-sm-6 {
     flex: 1 0 50%;
     max-width: 70%;
-  }
-  .submitButton {
-    width: 35%;
-    padding-left: 4em;
-    margin-right: 5px;
-    background-color: #141e30;
-    color: white;
   }
 
   #submitRow {

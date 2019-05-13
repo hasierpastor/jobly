@@ -3,6 +3,7 @@ import JoblyApi from './JoblyApi';
 import { Redirect } from 'react-router-dom';
 import './Login.css';
 import {
+  Alert,
   Button,
   Form,
   FormGroup,
@@ -110,6 +111,12 @@ class Login extends Component {
   }
 
   render() {
+    let error = this.state.error ? (
+      <Alert className="error" color="danger">
+        {this.state.error ? `${this.state.error}` : null}
+      </Alert>
+    ) : null;
+
     const baseFormHtml = (
       <div className="formContainer">
         <FormGroup className="formGroup" row>
@@ -157,7 +164,6 @@ class Login extends Component {
               outline
               style={{
                 backgroundColor: '#141e30',
-                color: 'white',
                 opacity: '0.9'
               }}
               className="loginButton"
@@ -169,7 +175,6 @@ class Login extends Component {
               outline
               style={{
                 backgroundColor: '#141e30',
-                color: 'white',
                 opacity: '0.9'
               }}
               className="signUpButton"
@@ -182,7 +187,7 @@ class Login extends Component {
             {baseFormHtml}
             <div id="submitRow">
               <Button
-                style={{ backgroundColor: '#141e30', color: 'white' }}
+                style={{ color: 'white' }}
                 outline
                 className="submitButton"
               >
@@ -190,7 +195,7 @@ class Login extends Component {
               </Button>
             </div>
           </Form>
-          <div>{this.state.error ? `${this.state.error}` : null}</div>
+          {error}
         </div>
       );
     }
@@ -202,7 +207,6 @@ class Login extends Component {
             outline
             style={{
               backgroundColor: '#141e30',
-              color: 'white',
               opacity: '0.9'
             }}
             className="loginButton"
@@ -214,7 +218,6 @@ class Login extends Component {
             outline
             style={{
               backgroundColor: '#141e30',
-              color: 'white',
               opacity: '0.9'
             }}
             className="signUpButton"
@@ -275,16 +278,14 @@ class Login extends Component {
               <Button
                 outline
                 className="submitButton"
-                style={{ backgroundColor: '#141e30', color: 'white' }}
+                style={{ color: 'white' }}
               >
                 Submit
               </Button>
             </div>
           </Form>
         </div>
-        <div className="error">
-          {this.state.error ? `${this.state.error}` : null}
-        </div>
+        {error}
       </div>
     );
   }
