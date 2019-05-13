@@ -81,19 +81,21 @@ class JobList extends Component {
 
     return (
       <div className="jobList">
-        <form className="searchForm">
-          <label id="searchLabel" htmlFor="search" />
-          <input
-            class="searchInput"
-            placeholder="What job are you interested in?"
-            type="text"
-            name="search"
-            id="search"
-            value={this.state.search}
-            onChange={this.handleChange}
-          />
-        </form>
-        {cards}
+        <div className="jobs-content">
+          <form className="searchForm">
+            <label id="searchLabel" htmlFor="search" />
+            <input
+              className="searchInput"
+              placeholder="What job are you interested in?"
+              type="text"
+              name="search"
+              id="search"
+              value={this.state.search}
+              onChange={this.handleChange}
+            />
+          </form>
+          {cards}
+        </div>
       </div>
     );
   }

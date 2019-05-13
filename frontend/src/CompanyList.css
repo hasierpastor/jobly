@@ -18,6 +18,12 @@
   content: '';
 }
 
+.companies-content {
+  display: inline-block;
+  margin-top: 100px;
+  min-height: 100vh;
+  height: 100%;
+}
 /* #searchLabel {
   color: #141e30;
   font-family: 'Lato';

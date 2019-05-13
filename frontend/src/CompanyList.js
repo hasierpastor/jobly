@@ -74,19 +74,21 @@ class CompanyList extends Component {
 
     return (
       <div className="companyList">
-        <form className="searchForm">
-          <label id="searchLabel" htmlFor="search" />
-          <input
-            placeholder="What company are you interested in?"
-            class="searchInput"
-            type="text"
-            name="search"
-            id="search"
-            value={this.state.search}
-            onChange={this.handleChange}
-          />
-        </form>
-        {cards}
+        <div className="companies-content">
+          <form className="searchForm">
+            <label id="searchLabel" htmlFor="search" />
+            <input
+              placeholder="What company are you interested in?"
+              className="searchInput"
+              type="text"
+              name="search"
+              id="search"
+              value={this.state.search}
+              onChange={this.handleChange}
+            />
+          </form>
+          {cards}
+        </div>
       </div>
     );
   }

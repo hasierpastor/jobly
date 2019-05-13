@@ -282,7 +282,9 @@ class Login extends Component {
             </div>
           </Form>
         </div>
-        <div>{this.state.error ? `${this.state.error}` : null}</div>
+        <div className="error">
+          {this.state.error ? `${this.state.error}` : null}
+        </div>
       </div>
     );
   }
