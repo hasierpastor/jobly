@@ -7,6 +7,8 @@ import JoblyApi from './JoblyApi';
 import { withRouter } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 
+//TODO: refactor css, refactor backend, improve react performance, batch pagination
+
 class App extends Component {
   constructor(props) {
     super(props);
