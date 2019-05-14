@@ -7,7 +7,11 @@ To see a live demo: https://reactjs-jobly.herokuapp.com/companies
 - Username: test
 - Password: password
 
-**To clone this repository:**
+_To run this repository locally:_
+
+1. git clone
+2. createdb jobly
+3. psql jobly < data.sql
 
 _Set up the backend:_
 
@@ -21,7 +25,7 @@ _Set up the frontend:_
 2. `npm install`
 3. `npm start`
 
-<!-- ![alt text](https://github.com/SKaplan01/react_jobly/blob/master/images/jobly.gif 'Jobly Gif') -->
+![alt text](https://github.com/hasierpastor/react_jobly/blob/master/images/company-profile.jpg 'Company Page')
 
 **Here's a sample of the JSON returned from the backend (a GET to '/jobs'):**
 
