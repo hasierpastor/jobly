@@ -25,7 +25,7 @@ _Set up the frontend:_
 2. `npm install`
 3. `npm start`
 
-![alt text](https://github.com/hasierpastor/react_jobly/blob/master/images/company-profile.jpg 'Company Page')
+![alt text](https://github.com/hasierpastor/react_jobly/blob/master/images/main.jpg 'Company Page')
 
 **Here's a sample of the JSON returned from the backend (a GET to '/jobs'):**
 
