@@ -118,8 +118,8 @@ class Login extends Component {
     ) : null;
 
     const baseFormHtml = (
-      <div className="formContainer">
-        <FormGroup className="formGroup" row>
+      <div className="form-container">
+        <FormGroup className="form-group" row>
           <Label className="label" htmlFor="username">
             Username
           </Label>
@@ -134,7 +134,7 @@ class Login extends Component {
             />
           </Col>
         </FormGroup>
-        <FormGroup className="formGroup" row>
+        <FormGroup className="form-group" row>
           <Label className="label" htmlFor="password">
             Password
           </Label>
@@ -166,7 +166,7 @@ class Login extends Component {
                 backgroundColor: '#141e30',
                 opacity: '0.9'
               }}
-              className="loginButton"
+              className="login-button"
               onClick={this.isLogin}
             >
               Login
@@ -177,7 +177,7 @@ class Login extends Component {
                 backgroundColor: '#141e30',
                 opacity: '0.9'
               }}
-              className="signUpButton"
+              className="signup-button"
               onClick={this.isSignup}
             >
               SignUp
@@ -189,7 +189,7 @@ class Login extends Component {
               <Button
                 style={{ color: 'white' }}
                 outline
-                className="submitButton"
+                className="submit-button"
               >
                 Submit
               </Button>
@@ -209,7 +209,7 @@ class Login extends Component {
               backgroundColor: '#141e30',
               opacity: '0.9'
             }}
-            className="loginButton"
+            className="login-button"
             onClick={this.isLogin}
           >
             Login
@@ -220,16 +220,16 @@ class Login extends Component {
               backgroundColor: '#141e30',
               opacity: '0.9'
             }}
-            className="signUpButton"
+            className="signup-button"
             onClick={this.isSignup}
           >
             SignUp
           </Button>
         </ButtonGroup>
-        <div className="formContainer">
+        <div className="form-container">
           <Form onSubmit={this.handleRegister}>
             {baseFormHtml}
-            <FormGroup className="formGroup" row>
+            <FormGroup className="form-group" row>
               <Label className="label" htmlFor="firstName">
                 First Name
               </Label>
@@ -244,7 +244,7 @@ class Login extends Component {
                 />
               </Col>
             </FormGroup>
-            <FormGroup className="formGroup" row>
+            <FormGroup className="form-group" row>
               <Label className="label" htmlFor="lastName">
                 Last Name
               </Label>
@@ -259,7 +259,7 @@ class Login extends Component {
                 />
               </Col>
             </FormGroup>
-            <FormGroup className="formGroup" row>
+            <FormGroup className="form-group" row>
               <Label className="label" htmlFor="email">
                 Email
               </Label>
@@ -277,7 +277,7 @@ class Login extends Component {
             <div id="submitRow">
               <Button
                 outline
-                className="submitButton"
+                className="submit-button"
                 style={{ color: 'white' }}
               >
                 Submit

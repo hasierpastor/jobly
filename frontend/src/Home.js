@@ -32,7 +32,7 @@ class Home extends Component {
                 height: '3rem',
                 opacity: '0.8'
               }}
-              className="linkButton"
+              className="link-button"
             >
               View Jobs
             </Button>
@@ -42,7 +42,7 @@ class Home extends Component {
     }
     return (
       <div id="HomeContainer">
-        <div className="backDrop">
+        <div className="back-drop">
           <h1>jobly</h1>
           {content}
         </div>

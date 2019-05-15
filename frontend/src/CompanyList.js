@@ -61,7 +61,7 @@ class CompanyList extends Component {
 
     let cards = this.state.companies.map(company => {
       return (
-        <div className="cardHolder" key={company.handle + 'div'}>
+        <div className="card-holder" key={company.handle + 'div'}>
           <CompanyCard
             name={company.name}
             description={company.description}
@@ -73,13 +73,13 @@ class CompanyList extends Component {
     });
 
     return (
-      <div className="companyList">
+      <div className="company-list">
         <div className="companies-content">
-          <form className="searchForm">
+          <form className="search-form">
             <label id="searchLabel" htmlFor="search" />
             <input
               placeholder="What company are you interested in?"
-              className="searchInput"
+              className="search-input"
               type="text"
               name="search"
               id="search"

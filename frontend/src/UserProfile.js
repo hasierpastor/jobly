@@ -58,9 +58,9 @@ class UserProfile extends Component {
     return (
       <div className="background">
         <div id="profileContainer">
-          <div className="formContainer">
+          <div className="form-container">
             <Form onSubmit={this.handleUpdate}>
-              <div className="picRow">
+              <div className="pic-row">
                 <div id="profilePicContainer">
                   <img
                     id="profilePic"
@@ -69,7 +69,7 @@ class UserProfile extends Component {
                   />
                 </div>
               </div>
-              <FormGroup className="formGroup" row>
+              <FormGroup className="form-group" row>
                 <Label className="label" htmlFor="username">
                   Username
                 </Label>
@@ -84,7 +84,7 @@ class UserProfile extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup className="formGroup" row>
+              <FormGroup className="form-group" row>
                 <Label className="label" htmlFor="firstName">
                   First Name
                 </Label>
@@ -99,7 +99,7 @@ class UserProfile extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup className="formGroup" row>
+              <FormGroup className="form-group" row>
                 <Label className="label" htmlFor="lastName">
                   Last Name
                 </Label>
@@ -114,7 +114,7 @@ class UserProfile extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup className="formGroup" row>
+              <FormGroup className="form-group" row>
                 <Label className="label" htmlFor="email">
                   Email
                 </Label>
@@ -129,7 +129,7 @@ class UserProfile extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup className="formGroup" row>
+              <FormGroup className="form-group" row>
                 <Label className="label" htmlFor="photoUrl">
                   Photo Url
                 </Label>
@@ -144,7 +144,7 @@ class UserProfile extends Component {
                   />
                 </Col>
               </FormGroup>
-              <FormGroup className="formGroup" row>
+              <FormGroup className="form-group" row>
                 <Label className="label" htmlFor="password">
                   Re-enter Password
                 </Label>
@@ -163,7 +163,7 @@ class UserProfile extends Component {
                 <Button
                   outline
                   style={{ color: 'white' }}
-                  className="submitButton"
+                  className="submit-button"
                 >
                   Save Changes
                 </Button>

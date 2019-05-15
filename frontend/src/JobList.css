@@ -1,11 +1,11 @@
-.jobList {
+.job-list {
   position: relative;
   width: 100vw;
   height: 100%;
   display: block;
 }
 
-.jobList::after {
+.job-list::after {
   background-image: url('./images/architecture-blue-building-1106476.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -34,11 +34,11 @@
   margin: 0.5rem;
 } */
 
-.searchForm {
+.search-form {
   background-color: transparent;
 }
 
-.searchInput {
+.search-input {
   width: 20rem;
   border: 1px solid #42b7ce;
   border-radius: 5px;
@@ -47,11 +47,11 @@
   outline: none;
 }
 
-.searchInput:focus {
+.search-input:focus {
   color: darkgrey;
 }
 
-.cardHolder {
+.card-holder {
   display: inline-block;
   margin: 25px;
   width: 400px;

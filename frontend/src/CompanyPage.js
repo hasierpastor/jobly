@@ -37,7 +37,7 @@ class CompanyPage extends Component {
 
     let jobs = this.state.company.jobs.map(job => (
       //CHANGE props passed to job card so shows applied/ not applied
-      <div className="cardHolder" key={job.id + 'div'}>
+      <div className="card-holder" key={job.id + 'div'}>
         <JobCard
           title={job.title}
           salary={job.salary}
@@ -53,8 +53,8 @@ class CompanyPage extends Component {
     ));
 
     return (
-      <div className="companyPage">
-        <div className="companyHeader">
+      <div className="company-page">
+        <div className="company-header">
           <h1 id="header">{this.state.company.name}</h1>
           <p>{this.state.company.description}</p>
         </div>

@@ -10,7 +10,7 @@
   background-size: cover;
 }
 
-.backDrop {
+.back-drop {
   width: 80vw;
   max-width: 30em;
   min-height: 10em;
@@ -30,16 +30,16 @@
   font-size: 68px;
 }
 
-.linkButton {
+.link-button {
   width: 30%;
   margin-bottom: 2em;
 }
 
-.linkButton > a {
+.link-button > a {
   color: white;
 }
 
-.linkButton > a:hover {
+.link-button > a:hover {
   color: white;
   text-decoration: none;
 }

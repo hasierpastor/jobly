@@ -1,4 +1,4 @@
-.formGroup {
+.form-group {
   margin: 15px;
 }
 
@@ -11,8 +11,8 @@
   width: 80px;
 }
 
-.signUpButton,
-.loginButton {
+.signup-button,
+.login-button {
   margin-right: 3px;
   background-color: #141e30;
 }
@@ -29,11 +29,11 @@ form {
   opacity: 0.9;
 }
 
-.formContainer {
+.form-container {
   text-align: left;
 }
 
-.formContainer label {
+.form-container label {
   margin-left: 1em;
 }
 
@@ -43,9 +43,9 @@ form {
   justify-content: flex-end;
 }
 
-.submitButton {
+.submit-button {
   width: 35%;
-  margin-top: 0.6em;
+  margin-top: 0.8em;
   margin-bottom: 0.6em;
 }
 

@@ -1,10 +1,10 @@
-.companyPage {
+.company-page {
   width: 100vw;
   height: 100vw;
   position: relative;
 }
 
-.companyPage::after {
+.company-page::after {
   background-image: url('./images/architectural-design-architecture-blue-sky-442577.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
